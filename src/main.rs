@@ -2,7 +2,7 @@
 use clap::Parser;
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Serialize, Deserialize)]
 struct Cep {
     cep: String,
     logradouro: String,
