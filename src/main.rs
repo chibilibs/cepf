@@ -30,7 +30,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     let url = format!("https://viacep.com.br/ws/{}/json/", args.cep);
     let body = reqwest::get(url).await?.json::<Cep>().await?;
 
-    let caganeira = format!(" cep : {} \n logradouro : {} \n complemento : {} \n bairro : {} \n localidade : {} \n uf : {} \n ddd : {} \n ", body.cep, body.logradouro, body.complemento, body.bairro, body.localidade, body.uf, body.ddd);
-    print!("{}", caganeira);
+    let resp = format!(" cep : {} \n logradouro : {} \n complemento : {} \n bairro : {} \n localidade : {} \n uf : {} \n ddd : {} \n ", body.cep, body.logradouro, body.complemento, body.bairro, body.localidade, body.uf, body.ddd);
+    println!("{}", resp);
     Ok(())
 }
